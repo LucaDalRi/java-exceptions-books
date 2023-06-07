@@ -17,19 +17,39 @@ public class Main {
 
             System.out.println("Inserisci il titolo");
 
-            String titolo = s1.nextLine();
+            String titolo = null;
+            try {
+                titolo = s1.nextLine();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
 
             System.out.println("Inserisci in numeri di pagine");
 
-            int nPagine = Integer.parseInt(s1.nextLine());
+            int nPagine = 0;
+            try {
+                nPagine = Integer.parseInt(s1.nextLine());
+            } catch (NumberFormatException e) {
+                throw new RuntimeException(e);
+            }
 
             System.out.println("Inserisci l`autore");
 
-            String autore = s1.nextLine();
+            String autore = null;
+            try {
+                autore = s1.nextLine();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
 
             System.out.println("Inserisci l`editore");
 
-            String editore = s1.nextLine();
+            String editore = null;
+            try {
+                editore = s1.nextLine();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
 
             Book newLibro = new Book(titolo,nPagine,autore,editore);
 
